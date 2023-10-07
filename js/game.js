@@ -1,7 +1,7 @@
 let canvas;
 let world;
 let keyboard = new Keyboard();
-let fullscreenMode = false;
+let isFullscreen = false;
 
 function init() {
     canvas = document.getElementById('canvas');
@@ -33,7 +33,7 @@ window.addEventListener("keydown", (e) => {
     if (e.keyCode == 68) {
         keyboard.D = true;
     }
-})
+});
 
 window.addEventListener("keyup", (e) => {
     if (e.keyCode == 37) {
@@ -59,27 +59,13 @@ window.addEventListener("keyup", (e) => {
     if (e.keyCode == 68) {
         keyboard.D = false;
     }
-})
-
-
-function fullscreen() {
-    let content = document.getElementById('content');
-    if (document.fullscreenElement === null) {
-        content.requestFullscreen();
-    } else {
-        document.exitFullscreen();
-    }
-}
+});
 
 function setAudio() {
-    let storage = localStorage.getItem('audio');
-    if (storage) {
-        if (storage == 'false') {
-            volumeMute();
-        }
-    } else {
-        world.audio = true
-    }
+    world.audio = !world.audio;
+    let volume = document.getElementById('volume');
+    volume.src = world.audio ? 'img/10_icons/volume.png' : 'img/10_icons/mute.png';
+    localStorage.setItem('audio', world.audio);
 }
 
 function restart(id) {
@@ -101,15 +87,6 @@ function closeSettings() {
     btn.src = 'img/10_icons/settings-icon.png'
     document.getElementById('settings').classList.add('d-none');
 }
-
-function volumeMute() {
-    world.audio = false;
-    let volume = document.getElementById('volume');
-    volume.src = 'img/hud/volume-off.svg';
-    localStorage.setItem('audio', false)
-}
-
-let isFullscreen = false;
 
 function toggleFullscreen() {
   const content = document.getElementById('content');
