@@ -7,7 +7,7 @@ class Keyboard {
     D = false;
 
     constructor() {
-        this.pressedBtnsEvents()
+        this.pressedBtnsEvents();
     }
 
     pressedBtnsEvents() {
