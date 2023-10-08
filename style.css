@@ -238,7 +238,6 @@ canvas {
     #restartBtn {
         bottom: 20px;
         top: unset;
-        z-index: 99;
     }
     
     .fullscreen img:nth-child(2){
@@ -256,6 +255,7 @@ canvas {
         bottom: 0;
         display: flex;
         justify-content: space-between;
+        pointer-events: none;
     }
 
     .subcontainerHud {
