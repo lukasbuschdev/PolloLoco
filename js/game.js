@@ -76,9 +76,13 @@ function restart(id) {
 
 function openSettings() {
     let btn = document.getElementById('settingsBtn');
+    let settingsContainer = document.querySelector('#settings');
+    
     btn.setAttribute('onclick', 'closeSettings()');
     btn.src = 'img/10_icons/settings-icon.png'
-    document.getElementById('settings').classList.remove('d-none');
+    
+    settingsContainer.classList.remove('d-none');
+    settingsContainer.addEventListener('click', closeSettings);
 }
 
 function closeSettings() {
@@ -89,13 +93,13 @@ function closeSettings() {
 }
 
 function toggleFullscreen() {
-  const content = document.getElementById('content');
+    const content = document.getElementById('content');
 
-  if(!isFullscreen) {
-    fullscreenON(content);
-  } else {
-    fullscreenOFF();
-  }
+    if(!isFullscreen) {
+      fullscreenON(content);
+    } else {
+      fullscreenOFF();
+    }
 }
 
 function fullscreenON(content) {
@@ -124,4 +128,4 @@ function fullscreenOFF() {
     }
 
     isFullscreen = false;
-} 
+}
