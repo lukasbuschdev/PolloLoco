@@ -96,7 +96,7 @@ class World {
             if(this.throwableObjects[i].energy == 0 && !this.throwableObjects[i].deleted || !this.throwableObjects[i].isAboveGround() && !this.throwableObjects[i].deleted) {
                 this.throwableObjects[i].deleted = true;
                 setTimeout(() => {
-                    if(this.throwableObjects[i].deleted) {
+                    if(this.throwableObjects[i]?.deleted) {
                         this.throwableObjects[i].clearIntervals();
                         this.throwableObjects.splice(i, 1);
                     }
