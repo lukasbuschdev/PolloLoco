@@ -23,7 +23,7 @@ class Bottle extends MovableObject {
 
     bottlteOnGround() {
         let i  = Math.random();
-        if (i < 0.8){
+        if(i < 0.8){
             i = 0;
         } else {
             i = 1;

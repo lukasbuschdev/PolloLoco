@@ -5,6 +5,7 @@ class ThrowableObject extends MovableObject {
         right: 0,
         bottom: 0
     }
+    
     deleted = false;
     speedX = 5;
     bottle_sound = new Audio('audio/bottle.mp3'); 

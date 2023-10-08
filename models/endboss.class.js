@@ -5,6 +5,7 @@ class Endboss extends MovableObject {
     energy = 500;
     activate = false;
     speed = 20;
+
     offset = {
         top: 80,
         left: 50,
@@ -30,12 +31,14 @@ class Endboss extends MovableObject {
         'img/4_enemie_boss_chicken/2_alert/G10.png',
         'img/4_enemie_boss_chicken/2_alert/G11.png',
         'img/4_enemie_boss_chicken/2_alert/G12.png'
-    ]
+    ];
+
     images_IsHurt = [
         'img/4_enemie_boss_chicken/4_hurt/G21.png',
         'img/4_enemie_boss_chicken/4_hurt/G22.png',
         'img/4_enemie_boss_chicken/4_hurt/G23.png'
     ];
+
     images_IsDead = [
         'img/4_enemie_boss_chicken/5_dead/G24.png',
         'img/4_enemie_boss_chicken/5_dead/G25.png',
@@ -57,13 +60,13 @@ class Endboss extends MovableObject {
 
     run(character) {
         if (this.x > (character.x - 300) && !this.right) {
-            this.moveLeft(4)
+            this.moveLeft(4);
             this.otherDirection = false;
             if(this.x <= (character.x - 100)) {
                 this.right = true;
             }
         } else if (this.x < (character.x + 300) && this.right) {
-            this.moveRight(4)
+            this.moveRight(4);
             this.otherDirection = true;
             if(this.x >= character.x) {
                 this.right = false;
@@ -82,6 +85,6 @@ class Endboss extends MovableObject {
             } else {
                 this.playAnimation(this.images_Idle);
             }
-        }, 200)
+        }, 200);
     }
 }

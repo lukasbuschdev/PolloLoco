@@ -100,7 +100,7 @@ class MovableObject extends DrawableObject {
     rushAttack() {
         this.speed = 3;
         if (!this.isAboveGround()) {
-          this.jump('low')  
+            this.jump('low'); 
         }        
     }
 }

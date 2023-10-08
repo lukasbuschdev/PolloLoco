@@ -10,53 +10,53 @@ function init() {
 }
 
 window.addEventListener("keydown", (e) => {
-    if (e.keyCode == 37) {
+    if(e.keyCode == 37) {
         keyboard.LEFT = true;
     }
 
-    if (e.keyCode == 39) {
+    if(e.keyCode == 39) {
         keyboard.RIGHT = true;
     }
 
-    if (e.keyCode == 38) {
+    if(e.keyCode == 38) {
         keyboard.UP = true;
     }
 
-    if (e.keyCode == 40) {
+    if(e.keyCode == 40) {
         keyboard.DOWN = true;
     }
 
-    if (e.keyCode == 32) {
+    if(e.keyCode == 32) {
         keyboard.SPACE = true;
     }
 
-    if (e.keyCode == 68) {
+    if(e.keyCode == 68) {
         keyboard.D = true;
     }
 });
 
 window.addEventListener("keyup", (e) => {
-    if (e.keyCode == 37) {
+    if(e.keyCode == 37) {
         keyboard.LEFT = false;
     }
 
-    if (e.keyCode == 39) {
+    if(e.keyCode == 39) {
         keyboard.RIGHT = false;
     }
 
-    if (e.keyCode == 38) {
+    if(e.keyCode == 38) {
         keyboard.UP = false;
     }
 
-    if (e.keyCode == 40) {
+    if(e.keyCode == 40) {
         keyboard.DOWN = false;
     }
 
-    if (e.keyCode == 32) {
+    if(e.keyCode == 32) {
         keyboard.SPACE = false;
     }
 
-    if (e.keyCode == 68) {
+    if(e.keyCode == 68) {
         keyboard.D = false;
     }
 });
@@ -91,7 +91,7 @@ function closeSettings() {
 function toggleFullscreen() {
   const content = document.getElementById('content');
 
-  if (!isFullscreen) {
+  if(!isFullscreen) {
     fullscreenON(content);
   } else {
     fullscreenOFF();
@@ -99,27 +99,29 @@ function toggleFullscreen() {
 }
 
 function fullscreenON(content) {
-    if (content.requestFullscreen) {
+    if(content.requestFullscreen) {
         content.requestFullscreen();
-      } else if (content.mozRequestFullScreen) {
+    } else if(content.mozRequestFullScreen) {
         content.mozRequestFullScreen();
-      } else if (content.webkitRequestFullscreen) {
+    } else if(content.webkitRequestFullscreen) {
         content.webkitRequestFullscreen();
-      } else if (content.msRequestFullscreen) {
+    } else if(content.msRequestFullscreen) {
         content.msRequestFullscreen();
-      }
-      isFullscreen = true;
+    }
+
+    isFullscreen = true;
 }
 
 function fullscreenOFF() {
-    if (document.exitFullscreen) {
+    if(document.exitFullscreen) {
         document.exitFullscreen();
-      } else if (document.mozCancelFullScreen) {
+    } else if(document.mozCancelFullScreen) {
         document.mozCancelFullScreen();
-      } else if (document.webkitExitFullscreen) {
+    } else if(document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) {
+    } else if(document.msExitFullscreen) {
         document.msExitFullscreen();
-      }
-      isFullscreen = false;
+    }
+
+    isFullscreen = false;
 } 

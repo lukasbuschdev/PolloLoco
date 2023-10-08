@@ -10,7 +10,6 @@ class StatusBarBottle extends StatusBar {
         'img/7_statusbars/1_statusbar/3_statusbar_bottle/orange/100.png'
     ]
 
-
     constructor() {
         super();
         this.loadImages(this.Images_Bottle);
