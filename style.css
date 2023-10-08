@@ -128,7 +128,6 @@ button {
     right: 0;
     display: flex;
     justify-content: center;
-    z-index: 99;
 }
 
 #startbtn button,
@@ -239,6 +238,7 @@ canvas {
     #restartBtn {
         bottom: 20px;
         top: unset;
+        z-index: 99;
     }
     
     .fullscreen img:nth-child(2){
