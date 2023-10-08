@@ -192,6 +192,7 @@ class World {
             bottle.hit(100);
             if (this.audio) {
                 bottle.bottle_sound.play();
+                e.chicken_sound.play();
             }
         };
     }

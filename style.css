@@ -132,6 +132,7 @@ button {
 
 #startbtn button,
 #restartBtn button {
+    cursor: pointer;
     background-image: linear-gradient(rgb(255, 136, 0), #fffb00, rgb(255, 136, 0));
     width: 100px;
     height: 30px;
@@ -139,6 +140,13 @@ button {
     font-family: zabars, sans-serif;
     font-size: 24px;
     border: none;
+    transform: scale(1);
+    transition: transform 75ms ease-in-out;
+}
+
+#startbtn button:hover,
+#restartBtn button:hover {
+    transform: scale(1.05);
 }
 
 .turn {
